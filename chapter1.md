@@ -24,4 +24,6 @@ http://studygolang.com/articles/4981
 go语言学习笔记  
 http://studygolang.com/articles/5707  
 defer你真的懂了吗  
-http://studygolang.com/articles/2593
+http://studygolang.com/articles/2593  
+错误处理  
+http://studygolang.com/articles/1893
