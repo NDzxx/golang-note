@@ -117,6 +117,11 @@ func main() {
 ```
 例子2：在函数返回后执行
 ```
+package main
+
+import (
+	"fmt"
+)
 func f2() (i int) {
     var a int = 1
     defer func() {
