@@ -9,4 +9,5 @@
    * [为类型添加方法](method.md)
    * [接口](Interface.md)
    * [继承](intend.md)
+* 错误和异常
 
