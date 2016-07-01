@@ -218,7 +218,7 @@ nima
       a := func() func() {
           var i int = 10
           return func() {
-              //i *= 3
+              //i *= 3 
               fmt.Printf("i, j: %d, %d\n", i, j)
           }
       }()
