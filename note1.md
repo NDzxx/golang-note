@@ -48,3 +48,28 @@ a = 10
 i，j=j,i
 
 这就直接实现了两个变量的交换。
+###4. 匿名变量
+go语言的函数是多返回值的，因此可能有些值并没有被用到，这时我们就需要一个占位符去忽略这些返回值。
+```
+func GetName() (firstName, lastName, nickName string) {
+ return "May", "Chan", "Chibi Maruko"
+}
+_, _, nickName := GetName()
+```
+###5.定义常量
+通过const关键字，可以用来定义常量
+```
+const Pi float64 = 3.1415926
+const zero = 0.0 //自动推断类型
+const (             //多定义
+  size int64 = 10
+  hello = -1
+)
+const u , v float32 = 0.0 , 3.0 //多重赋值
+const a , b , c = 1 , 2 , “hello” //自动推断类型
+```
+常量的定义也可以跟一个表达式, 但是这个表达式应该是编译的时候就可以求值的.
+```
+const mask = 1 << 3 //正常
+const Home = os.GetEnv("HOME") //错误,运行时才能确定
+```
