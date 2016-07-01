@@ -147,7 +147,9 @@ const (
   12
   ä //单个汉字字符无法输出
   你好,世界
-  13//len长度计算，1个汉字2字节
+  13
+  //对于中文, 结果是乱码, 因为是一个字节一个字节输出的, 但是默认是UTF8编码, 
+  // 一个中文对应3个字节.
 
   ```
   字符串连接也是用+.
@@ -158,11 +160,67 @@ const (
   import "fmt" //引入依赖包
 
   func main() {
-    var str string = "hello,world!"
-    n := len(str)
-    for i := 0; i < n; i++ {
-      ch := str[i]
-      fmt.Printf("%c\n",ch)
-    }
+      var str string = "hello,world!"
+      n := len(str)
+      //第一种
+      for i := 0; i < n; i++ {
+          ch := str[i]
+          fmt.Printf("%c\n",ch)
+      }
+      //第2中range,也可以用于数组 slice map等等
+      for index := range str {
+          ch1:= str[index]
+          fmt.Printf("%c\n",ch1)
+      }
   }
   ```
+  这里我们要提到一个range的关键字, 它可以把字符串按键值对的方式返回.
+  ```
+  package main
+
+  import "fmt" //引入依赖包
+
+  func main() {
+      var str string = "你好，hello!"
+      //n := len(str)
+      /*for i := 0; i < n; i++ {
+          ch := str[i]
+          fmt.Printf("%c\n",ch)
+      }*/
+
+      for index := range str {
+          ch1:= str[index]
+          fmt.Printf("%c\n",ch1)
+      }
+      fmt.Println("--- 分割符---")
+      for _, ch := range str {
+          fmt.Printf("%c\n",ch)
+      }
+  }
+  ```
+  输出结果为
+  ```
+  ä
+å
+ï
+h
+e
+l
+l
+o
+!
+--- 分割符---
+你
+好
+，
+h
+e
+l
+l
+o
+!
+
+  ```
+  事实上, 字符类型有两种, 一种就是byte(uint8), 另一种是rune.   
+  第一种遍历字符串ch是byte, 而第二种是rune.
+  
