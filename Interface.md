@@ -80,3 +80,7 @@ src\goMethod_1.go:58: cannot use people (type People) as type Speaker in assignm
 speaker = &people
 speaker.SayHi()
 ```
+结果：
+```
+Hi, I'm 张三. Nice to meet you!
+```
