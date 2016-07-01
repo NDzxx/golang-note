@@ -19,25 +19,39 @@
   import "fmt" //引入依赖包
 
   func main() {
-    //从数组创建
-    var myArray [10]int = [10]int{1,2,3,4,5,6,7,8,9,10}
-    var sa []int = myArray[5:]
-    for _, e := range sa {
-        fmt.Println(e)
-    }
-    fmt.Println(len(sa))
-    fmt.Println(cap(sa))//cap()函数返回的是数组切片分配的空间大小。
-    //从make创建
-    var mySlice2 []int = make([]int, 5, 10)
-    for _, e := range mySlice2 {
-        fmt.Println(e)
-    }
-    fmt.Println(len(mySlice2))
-    fmt.Println(cap(mySlice2))
-    //赋值
-    var mySlice3 []int = []int{1,2,3}
-    for _, e := range mySlice2 {
-        fmt.Println(e)
-    }
+      //从数组创建
+      var myArray [10]int = [10]int{1,2,3,4,5,6,7,8,9,10}
+      var sa []int = myArray[5:]
+      for _, e := range sa {
+          fmt.Println(e)
+      }
+      fmt.Println("sa len:",len(sa))
+      fmt.Println("sa cap:",cap(sa))
+      fmt.Println("sa done")
+      //从make创建,make第2个参数是长度，第3个参数是开辟的空间上限
+      var mySlice2 []int = make([]int, 5, 10)
+      /*错误例子，这样会超出容量
+      for i := 0; i < cap(mySlice2); i++{
+          mySlice2[i] = i
+      }*/
+      //可以使用append来增加数组长度或者赋值给别的数组,可突破设置的空间上限
+      //mySlice2 = append(mySlice2,0,1,2,3,4,5,6,7,8,9,10)
+      for _, e := range mySlice2 {
+          fmt.Println(e)
+      }
+      fmt.Println("mySlice2 len:",len(mySlice2))
+      fmt.Println("mySlice2 cap:",cap(mySlice2))
+      fmt.Println("mySlice2 done")
+      //赋值
+      var mySlice3 []int = []int{1,2,3}
+      fmt.Println("mySlice3 len:",len(mySlice3))
+      //append注意点，如果添加给mySlice3,
+      //这样会抹掉mySlice3的值但是myslice2的值没有变化
+      mySlice3 = append(mySlice2,0,1,2,3,4,5,6,7,8,9,10)
+      fmt.Println("mySlice3 len:",len(mySlice3))
+      fmt.Println("mySlice3:",mySlice3)
+      fmt.Println("mySlice3 done")
+      fmt.Println("mySlice2 len:",len(mySlice2))
+      fmt.Println("mySlice2:",mySlice2)
   }
   ```
