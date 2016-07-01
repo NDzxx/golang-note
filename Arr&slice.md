@@ -83,10 +83,12 @@
       fmt.Println("slice after test func",mySlice)
   }
   ```
-- append  
+- append  和 copy
   ```
   mySlice = append(mySlice, 1, 2, 3)
   mySlice = append(mySlice, mySlice2...)//append可以添加slice到slice
+  /* 拷贝 src 的内容到 des */
+  copy(des,src)
   ```
 - map  
   用法见例子
