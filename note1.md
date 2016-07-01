@@ -121,11 +121,11 @@ const (
 - 字符串类型  
   ```
       
-    package main
+  package main
 
-    import "fmt" //引入依赖包
+  import "fmt" //引入依赖包
 
-    func main() {
+  func main() {
       var str string = "hello,world!"
       fmt.Println(str)
       ch := str[0]  //取某个特定位置的字符
@@ -135,8 +135,34 @@ const (
       str = "你好,世界"
       ch = str[0]
       fmt.Printf("%c\n",ch)
+      fmt.Printf("%v\n",str)
       length = len(str)
       fmt.Println(length)
-    }
+  }
   ```
-  
+  输出为
+  ```
+  hello,world!
+  h
+  12
+  ä //单个汉字字符无法输出
+  你好,世界
+  13//len长度计算，1个汉字2字节
+
+  ```
+  字符串连接也是用+.
+  字符串的遍历:
+  ```
+  package main
+
+  import "fmt" //引入依赖包
+
+  func main() {
+    var str string = "hello,world!"
+    n := len(str)
+    for i := 0; i < n; i++ {
+      ch := str[i]
+      fmt.Printf("%c\n",ch)
+    }
+  }
+  ```
