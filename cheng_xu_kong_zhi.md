@@ -86,4 +86,32 @@ nima
   }
 
 ```
-[参考文章:golang label breaks](http://studygolang.com/articles/2365)
+[参考文章:golang label breaks](http://studygolang.com/articles/2365)  
+- 函数
+  函数是一个非常重要的概念, 也很简单.   
+  go的函数以func关键字定义, 支持不定参数和多返回值. 函数名首字符的大小写是很有讲究的:  
+  小写字母开头的函数只在本包内可见，大写字母开头的函数才能被其他包使用。这个规则也适用于类型和变量的可见性。  
+  ```
+  package main
+
+  import "fmt" //引入依赖包
+
+  //...int是不定参数,实际上就是一个slice, a,b是多返回值
+  func SumAndAverage(sample ...int) (a , b float64)  {
+      a , b = 0 , 0
+      for _, d := range sample {
+          a += float64(d)
+      }
+      if len(sample) == 0 {
+          b = 0
+      }else{
+          b = a / float64(len(sample))
+      }
+      return a , b
+  }
+
+  func main() {
+      a , b := SumAndAverage(1, 2 , 3)
+      fmt.Println(a , b)
+  }
+  ```
