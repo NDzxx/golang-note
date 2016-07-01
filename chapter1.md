@@ -10,3 +10,5 @@ go语言指南在线学习
 https://tour.go-zh.org/   
 go语言基础视频 网易云课堂  
 http://study.163.com/course/introduction/306002.htm#/courseDetail  
+go语言中文网  
+http://studygolang.com/  
