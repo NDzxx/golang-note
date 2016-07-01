@@ -15,3 +15,5 @@ http://studygolang.com/
 Beego: 一个国产的HTTP框架。我们可以用它来快速地开发各种应用程序。官网：http://beego.me。  
 go名库讲解  
 http://www.ucai.cn/course/show/134  
+go web基础  
+http://www.ucai.cn/course/show/87
