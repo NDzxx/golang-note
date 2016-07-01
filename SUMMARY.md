@@ -8,4 +8,5 @@
 * [面向对象编程](toObject.md)
    * [为类型添加方法](method.md)
    * [接口](Interface.md)
+   * 继承
 
