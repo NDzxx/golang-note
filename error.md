@@ -72,6 +72,19 @@ func main() {
 ```
 ##②defer--延迟语句
 在Go语言中，可以使用关键字defer向函数注册**退出调用**，即主调函数退出时，defer后的函数才会被调用。
-defer语句的作用是不管程序是否出现异常，均在函数退出时自动执行相关代码。（相当于Java中的finally ）
+defer语句的作用是不管程序是否出现异常，均在函数退出时自动执行相关代码。
 
 当函数执行到最后时，这些defer语句会按照逆序执行，最后该函数返回。
+```
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    for i := 0; i < 5; i++ {
+        defer fmt.Println(i)
+    }
+}
+```
