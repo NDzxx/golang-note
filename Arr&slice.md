@@ -71,11 +71,12 @@
   }
 
   func main() {
+      //数组是按照值来传递.
       var myArray [10]int = [10]int{1,2,3,4,5,6,7,8,9,10}
       fmt.Println("arr before test func",myArray)
       testArr(myArray)
       fmt.Println("arr after test func",myArray)
-
+      //slice是引用类型!!!
       var mySlice []int = []int{1,2,3,4,5,6,7,8,9,10}
       fmt.Println("slice before test func",mySlice)
       testSlice(mySlice)
