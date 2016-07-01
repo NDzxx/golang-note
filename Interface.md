@@ -37,8 +37,21 @@ func main() {
 有相同的方法列表（次序不同不要紧），那么它们就是等同的，可以相互赋值。
 
 接口赋值并不要求两个接口必须等价。如果接口A的方法列表是接口B的方法列表的子集，
-那么接口B可以赋值给接口A。
-
+那么接口B可以赋值给接口A。  
+几个接口也可以组合出一个接口.
+```
+type ReadWriter interface {
+ Reader
+ Writer
+}
+```
+等价于:
+```
+type ReadWriter interface {
+ Read(p []byte) (n int, err error)
+ Write(p []byte) (n int, err error)
+}
+```
 ##接口的大坑
 
 
