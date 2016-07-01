@@ -83,3 +83,9 @@
       fmt.Println("slice after test func",mySlice)
   }
   ```
+- append  
+  ```
+  mySlice = append(mySlice, 1, 2, 3)
+  mySlice = append(mySlice, mySlice2...)//append可以添加slice到slice
+  ```
+ 
