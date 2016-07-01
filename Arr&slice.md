@@ -89,7 +89,7 @@
   mySlice = append(mySlice, mySlice2...)//append可以添加slice到slice
   ```
 - map  
- 
+  用法见例子
   ```  
   package main
 
