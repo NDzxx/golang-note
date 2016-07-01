@@ -20,4 +20,6 @@ http://www.ucai.cn/course/show/87
 游戏服务器框架 Leaf/go
 http://studygolang.com/p/leafgo
 golang 项目多文件编程示例  
-http://studygolang.com/articles/4981
+http://studygolang.com/articles/4981  
+go语言学习笔记  
+http://studygolang.com/articles/5707  
