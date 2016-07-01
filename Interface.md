@@ -71,6 +71,6 @@ func main() {
 结果：
 ```
 # command-line-arguments
-src\goInterface1.go:28: cannot use a (type Integer) as type Adder in assignment:
-	Integer does not implement Adder (Add method has pointer receiver)
+src\goMethod_1.go:58: cannot use people (type People) as type Speaker in assignment:
+	People does not implement Speaker (SayHi method has pointer receiver)
 ```
