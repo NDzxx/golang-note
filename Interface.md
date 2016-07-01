@@ -205,3 +205,53 @@ func main() {
 ```
 Hi, I'm 张三. Nice to meet you!
 ```
+##Any类型
+由于Go语言中任何对象实例都满足接口interface{}，所以interface{}看起来是任何对象的Any类型
+```
+var v1 interface{} = 1
+var v2 interface{} = "abc"
+var v3 interface{} = &v2
+var v4 interface{} = struct{ X int }{1}
+var v5 interface{} = &struct{ X int }{1}
+func Printf(fmt string, args ...interface{})
+func Println(args ...interface{})
+```
+##接口转换和类型查询
+```
+package main
+
+import(
+  "fmt"
+)
+
+type Integer int
+
+func (a Integer) Less(b Integer) bool {
+  return a < b
+}
+
+func (a *Integer) Add(b Integer) {
+  *a += b
+}
+
+//定义接口
+type LessAdder interface {
+  Less(b Integer) bool //函数声明
+  Add(b Integer) //函数声明
+}
+
+//定义接口
+type Adder interface {
+  Add(b Integer) //函数声明
+}
+
+func main() {
+  var a Integer = 10
+  var b LessAdder = &a //道理我们前面提到过了,Add接收者是个对象指针
+  if  c , ok = b.(Adder); ok{
+    c.Add(10)
+    fmt.Println(a)
+    //fmt.Println(c.Less(100)) //报错,c.Less undefined (type Adder has no field or method Less)
+  }
+}
+```
