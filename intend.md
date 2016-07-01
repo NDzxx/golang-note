@@ -81,6 +81,19 @@ type Sun struct{
 
 func main() {
   var s *Sun = new(Sun)
-  s.Say()
+  s.Say()//二义性
+}
+```
+结果：
+```
+# command-line-arguments
+src\moreIntend.go:32: ambiguous selector s.Say
+```
+修改方式：
+```
+func main() {
+  var s *Sun = new(Sun)
+  s.Father.Say()
+  s.Mother.Say()
 }
 ```
