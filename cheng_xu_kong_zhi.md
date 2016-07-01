@@ -168,4 +168,41 @@ nima
       b()
   }
   ```
-  
+  输出结果:
+  ```
+  execute func a
+  11
+  0xc082002268
+  1
+  execute func b
+  12
+  0xc0820022a0
+  2
+  ```
+  我们从这个结果中发现, i的地址是会变的, 因为是作为一个局部变量传进去的.  
+  ```
+  package main
+
+  import "fmt" //引入依赖包
+
+  func test(x int) func(int) int {
+    return func(y int) int {
+      fmt.Printf("%p\n",&x)
+      return x + y
+    }
+  }
+
+  func main() {
+    a := test(1);
+    fmt.Println(a(10))
+    fmt.Println(a(20))
+  }
+  ```
+  输出
+  ```
+  0xc082002268
+  11
+  0xc082002268
+  21
+  //因为x只传入了一次(test(1)), 因此没有改变.
+  ```
