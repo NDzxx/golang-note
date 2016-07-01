@@ -12,3 +12,4 @@ go语言基础视频 网易云课堂
 http://study.163.com/course/introduction/306002.htm#/courseDetail  
 go语言中文网  
 http://studygolang.com/  
+Beego: 一个国产的HTTP框架。我们可以用它来快速地开发各种应用程序。官网：http://beego.me。  
