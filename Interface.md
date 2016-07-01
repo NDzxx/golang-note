@@ -217,6 +217,8 @@ func Printf(fmt string, args ...interface{})
 func Println(args ...interface{})
 ```
 ##接口转换和类型查询
+- 接口转换  
+ 
 ```
 package main
 
@@ -251,7 +253,40 @@ func main() {
   if  c , ok = b.(Adder); ok{
     c.Add(10)
     fmt.Println(a)
-    //fmt.Println(c.Less(100)) //报错,c.Less undefined (type Adder has no field or method Less)
+    //fmt.Println(c.Less(100)) 
+    //报错,c.Less undefined (type Adder has no field or method Less)
+  }
+}
+```  
+- 类型查询  
+```
+package main
+
+import(
+  "fmt"
+)
+
+
+func main() {
+  b := "a"
+  var a interface{} = b
+  switch a.(type) {
+  case int:
+    fmt.Println("int")
+  case float32:
+    fmt.Println("float32")
+  case int32:
+    fmt.Println("int32")
+  case float64:
+    fmt.Println("float64")
+  case bool:
+    fmt.Println("bool")
+  case string:
+    fmt.Println("string")
+  default:
+    fmt.Println("ok")
+
   }
 }
 ```
+ 
