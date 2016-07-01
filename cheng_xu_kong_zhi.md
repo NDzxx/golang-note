@@ -97,6 +97,7 @@ nima
   import "fmt" //引入依赖包
 
   //...int是不定参数,实际上就是一个slice, a,b是多返回值
+  //sample... //...表示是拆成一个个元素传递
   func SumAndAverage(sample ...int) (a , b float64)  {
       a , b = 0 , 0
       for _, d := range sample {
@@ -115,5 +116,7 @@ nima
       fmt.Println(a , b)
   }
   ```
+  匿名函数
+  
   
   
