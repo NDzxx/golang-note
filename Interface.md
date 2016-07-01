@@ -27,7 +27,7 @@ type LessAdder interface {
 
 func main() {
   var a Integer = 10
-  var b LessAdder = &a //道理我们前面提到过了,Add接收者是个对象指针
+  var b LessAdder = &a //Add接收者是个对象指针，原因见接口大坑
   fmt.Println(b.Less(5))
   b.Add(20)
   fmt.Println(a)
