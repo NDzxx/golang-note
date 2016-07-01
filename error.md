@@ -96,3 +96,36 @@ func main() {
 1
 0
 ```
+
+defer语句在声明时被加载到内存(多个defer语句按照FIFO原则) ，加载时记录变量的值，而在函数返回之后执行。看下面的例子：  
+例子1：defer语句加载时记录值
+```
+package main
+
+import (
+	"fmt"
+)
+func f1() {
+    i := 0
+    defer fmt.Println(i) //实际上是将fmt.Println(0)加载到内存
+    i++
+    return
+}
+func main() {
+    f1()//结果 0
+}
+```
+例子2：在函数返回后执行
+```
+func f2() (i int) {
+    var a int = 1
+    defer func() {
+        a++
+        fmt.Println("defer内部", a)
+    }()
+    return a
+}
+func main() {
+    fmt.Println("main中", f2())
+}
+```
