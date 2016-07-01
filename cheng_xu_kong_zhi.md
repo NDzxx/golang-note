@@ -204,5 +204,27 @@ nima
   11
   0xc082002268
   21
-  //因为x只传入了一次(test(1)), 因此没有改变.
+  //因为x只传入了一次( test(1) ), 因此没有改变.
+  ```
+  ```
+  package main
+
+  import (
+      "fmt"
+  )
+
+  func main() {
+      var j int = 5
+      a := func() func() {
+          var i int = 10
+          return func() {
+              //i *= 3
+              fmt.Printf("i, j: %d, %d\n", i, j)
+          }
+      }()
+      a()
+      j *= 2
+      a()
+  }
+
   ```
