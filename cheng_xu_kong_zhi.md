@@ -86,3 +86,4 @@ nima
   }
 
 ```
+[参考文章:golang label breaks](http://studygolang.com/articles/2365)
