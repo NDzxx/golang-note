@@ -55,5 +55,30 @@
       fmt.Println("mySlice2:",mySlice2)
   }
   ```
-- slice和数组传参的比较
-  
+- slice和数组传参的比较  
+
+  ```  
+  package main
+
+  import "fmt" //引入依赖包
+
+  func testArr(a [10]int)  {
+      a[0] = 10
+  }
+
+  func testSlice(a []int)  {
+      a[0] = 10
+  }
+
+  func main() {
+      var myArray [10]int = [10]int{1,2,3,4,5,6,7,8,9,10}
+      fmt.Println("arr before test func",myArray)
+      testArr(myArray)
+      fmt.Println("arr after test func",myArray)
+
+      var mySlice []int = []int{1,2,3,4,5,6,7,8,9,10}
+      fmt.Println("slice before test func",mySlice)
+      testSlice(mySlice)
+      fmt.Println("slice after test func",mySlice)
+  }
+  ```
