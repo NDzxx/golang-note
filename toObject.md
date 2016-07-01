@@ -62,4 +62,137 @@ b.Mofify()
 
   }
 ```
+###结构体的组合  
+```
+package main
 
+import (
+ "fmt"
+)
+
+//申明一个结构体
+type Human struct{
+  Name string
+  Age int
+  Phone string
+}
+
+//再申明一个结构体
+type Employee struct {
+    Person Human  // 匿名字段Human
+    Speciality string
+    Phone string  // 雇员的phone字段
+}
+
+func main() {
+  e := Employee{
+    Person:Human{
+      Name:"dingding",
+      Age:11,
+      Phone:"6666666",
+    },
+    Speciality:"aaa",
+    Phone:"77777777",
+  }
+  fmt.Println(e.Phone)
+
+}
+```
+这段代码看上去非常ok, 但是如果我们稍微改一下代码呢?   
+比如把Person改成匿名结构, 会有些好玩的现象.
+```
+package main
+
+import (
+ "fmt"
+)
+
+//申明一个结构体
+type Human struct{
+  Name string
+  Age int
+  Phone string
+}
+
+//再申明一个结构体
+type Employee struct {
+    Human  // 匿名字段Human
+    Speciality string
+    //Phone string  // 雇员的phone字段
+}
+
+func main() {
+  e := Employee{
+    Human{"dingding",11,"6666666"},
+    "aaa",
+    //Phone:"77777777",
+  }
+  fmt.Println(e.Phone)
+
+}
+```
+此时输出的是6666666, 因为相当于它把Human的字段Phone继承下来了.  
+如果Employee里也定义Phone字段呢?  
+```
+package main
+
+import (
+ "fmt"
+)
+
+//申明一个结构体
+type Human struct{
+  Name string
+  Age int
+  Phone string
+}
+
+//再申明一个结构体
+type Employee struct {
+    Human  // 匿名字段Human
+    Speciality string
+    Phone string  // 雇员的phone字段
+}
+
+func main() {
+  e := Employee{
+    Human{"dingding",11,"6666666"},
+    "aaa",
+    "77777777",
+  }
+  fmt.Println(e.Phone)
+
+}
+```
+此时输出的时77777777, 因为相当于是覆盖. 那么怎么输出6666666呢?
+```
+package main
+
+import (
+ "fmt"
+)
+
+//申明一个结构体
+type Human struct{
+  Name string
+  Age int
+  Phone string
+}
+
+//再申明一个结构体
+type Employee struct {
+    Human  // 匿名字段Human
+    Speciality string
+    Phone string  // 雇员的phone字段
+}
+
+func main() {
+  e := Employee{
+    Human{"dingding",11,"6666666"},
+    "aaa",
+    "77777777",
+  }
+  fmt.Println(e.Phone)
+  fmt.Println(e.Human.Phone)
+}
+```
