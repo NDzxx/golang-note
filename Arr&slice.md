@@ -88,4 +88,41 @@
   mySlice = append(mySlice, 1, 2, 3)
   mySlice = append(mySlice, mySlice2...)//append可以添加slice到slice
   ```
- - map
+- map  
+ 
+  ```  
+  package main
+
+  import "fmt" //引入依赖包
+
+  //定义一个Person的结构体
+  type Person struct{
+    name string
+    age int
+  }
+
+  func main() {
+    var dic map[string]Person = make(map[string]Person , 100) //初始化map
+    //插入
+    dic["1234"] = Person{name:"lilei",age:100}
+    dic["12345"] = Person{name:"hanmeimei",age:20}
+    dic["123456"] = Person{name:"dagong",age:30}
+    fmt.Println(dic)
+    //删除dagong
+    delete(dic,"123456")
+    fmt.Println(dic)
+    //查找某个key
+    value,ok := dic["123456"]
+    if ok {
+        fmt.Println(value)
+    }
+    value,ok = dic["1234"]
+    if ok {
+        fmt.Println(value)
+    }
+
+    for k,v := range dic {
+      fmt.Println(k + ":" + v.name)
+    }
+  }
+  ```
