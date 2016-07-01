@@ -49,3 +49,38 @@ sun
 ```
 
 ##多继承二义性
+```
+package main
+
+import(
+  "fmt"
+)
+
+//father
+type Father struct{
+}
+
+func (f *Father)Say()  {
+  fmt.Println("father")
+}
+
+
+//mother
+type Mother struct{
+}
+
+func (f *Mother)Say()  {
+  fmt.Println("mother")
+}
+
+//sun
+type Sun struct{
+  Father
+  Mother
+}
+
+func main() {
+  var s *Sun = new(Sun)
+  s.Say()
+}
+```
