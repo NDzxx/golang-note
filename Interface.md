@@ -84,3 +84,68 @@ speaker.SayHi()
 ```
 Hi, I'm 张三. Nice to meet you!
 ```
+
+或者把传指针改成传值
+```
+package main
+
+import(
+	"fmt"
+)
+
+//定义对象People、Teacher和Student
+type People struct {
+	Name string
+}
+
+type Teacher struct{
+	People
+	Department string
+}
+
+type Student struct{
+	People
+	School string
+}
+
+//对象方法实现
+func (p People) SayHi() {
+	fmt.Printf("Hi, I'm %s. Nice to meet you!\n",p.Name)
+}
+
+func (t Teacher) SayHi(){
+	fmt.Printf("Hi, my name is %s. I'm working in %s .\n", t.Name, t.Department)
+}
+
+func (s Student) SayHi() {
+	fmt.Printf("Hi, my name is %s. I'm studying in %s.\n", s.Name, s.School)
+}
+
+func (s Student) Study() {
+	fmt.Printf("I'm learning Golang in %s.\n", s.School)
+}
+
+//定义接口Speaker和Learner
+type Speaker interface{
+	SayHi()
+}
+
+type Learner interface{
+	SayHi()
+	Study()
+}
+
+func main() {
+
+	//初始化对象
+	people := People{"张三"}
+	var speaker Speaker   //定义Speaker接口类型的变量
+
+	speaker = people
+	speaker.SayHi()
+}
+```
+结果:  
+```
+Hi, I'm 张三. Nice to meet you!
+```
