@@ -70,3 +70,4 @@ func main() {
 6 0
 自定义的error,error名称为算数不合法
 ```
+##②defer--延迟语句
