@@ -23,3 +23,5 @@ golang 项目多文件编程示例
 http://studygolang.com/articles/4981  
 go语言学习笔记  
 http://studygolang.com/articles/5707  
+defer你真的懂了吗  
+http://studygolang.com/articles/2593
