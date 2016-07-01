@@ -116,7 +116,29 @@ nima
       fmt.Println(a , b)
   }
   ```
-  匿名函数
-  
+  匿名函数  
+  ```  
+  package main
+
+  import "fmt" //引入依赖包
+
+  func main() {
+      var myFunc func(...int)(float64, float64)= func(sample ...int) (a , b float64)  {
+          a , b = 0 , 0
+          for _, d := range sample {
+              a += float64(d)
+          }
+          if len(sample) == 0 {
+              b = 0
+          }else{
+              b = a / float64(len(sample))
+          }
+          return a , b
+      }
+
+      a , b := myFunc(1, 2 , 3)
+      fmt.Println(a , b)
+  }
+  ```
   
   
