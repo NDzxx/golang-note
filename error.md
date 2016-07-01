@@ -134,3 +134,15 @@ func main() {
     fmt.Println("main中", f2())
 }
 ```
+例子3：defer语句会读取主调函数的返回值，并对返回值赋值.(注意和例子2的区别)
+```
+func f3() (i int) {
+    defer func() {
+        i++
+    }()
+    return 1
+}
+func main() {
+    fmt.Println(f3())
+}
+```
