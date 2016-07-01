@@ -73,3 +73,70 @@ const a , b , c = 1 , 2 , “hello” //自动推断类型
 const mask = 1 << 3 //正常
 const Home = os.GetEnv("HOME") //错误,运行时才能确定
 ```
+###6. 预定义常量
+**这里要讲一个很有意思的东西, 叫做iota.
+这个东西每一个const出现的位置被置为0,没出现一个iota出现,都自增1,到写一个const出现的时候,又置为0.**
+```
+const (
+  c1 = iota //0
+  c2 = iota //1
+  c3 = iota //2
+)
+const x = iota // x == 0 (因为iota又被重设为0了)
+const y = iota // y == 0 (同上)
+```
+**如果两个const赋值表达式是一样的,可以省略后面的赋值表达式.**
+```
+const (
+  c1 = iota //0
+  c2 //1
+  c3 //3
+)
+const (
+  a = 1 <<iota // a == 1 (iota在每个const开头被重设为0)
+  b // b == 2
+  c // c == 4
+)
+```
+###6. 枚举
+```
+const (
+  Sunday = iota
+  Monday
+  Tuesday
+  Wednesday
+  Thursday
+  Friday
+  Saturday
+  numberOfDays // 这个常量没有导出
+)
+```
+大写字母开头的包外可见, 小写字母开头的包外不可见.
+###7. 类型
+- 整型  
+  int8, uint8, int16, uint16,int32, uint32, int64, uint64, int, uint, uintptr  
+  不同类型不能相互比较.
+- 浮点类型
+  float32, float64
+- 字符串类型  
+  ```
+      
+    package main
+
+    import "fmt" //引入依赖包
+
+    func main() {
+      var str string = "hello,world!"
+      fmt.Println(str)
+      ch := str[0]  //取某个特定位置的字符
+      fmt.Printf("%c\n",ch)
+      length := len(str)
+      fmt.Println(length) //len用来获取长度
+      str = "你好,世界"
+      ch = str[0]
+      fmt.Printf("%c\n",ch)
+      length = len(str)
+      fmt.Println(length)
+    }
+  ```
+  
