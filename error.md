@@ -199,3 +199,7 @@ func copyFile(dstName, srcName string) (copylen int64, err error) {
     return io.Copy(dst, src)
 }
 ```
+**滥用defer可能导致性能问题：**
+```
+
+```
