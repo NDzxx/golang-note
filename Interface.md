@@ -270,7 +270,7 @@ import(
 
 func main() {
   b := "a"
-  var a interface{} = b
+  var a interface{} = b//利用any类型进行查询
   switch a.(type) {
   case int:
     fmt.Println("int")
