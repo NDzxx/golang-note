@@ -140,5 +140,32 @@ nima
       fmt.Println(a , b)
   }
   ```
-  
+- 闭包  
+  1.闭包是可以包含自由（未绑定到特定对象）变量的代码块，这些变量不在这个代码块内或者任何全局上下文中定义，
+  而是在定义代码块的环境中定义。  
+  2.要执行的代码块（由于自由变量包含在代码块中，所以这些自由变量以及它们引用的对象没有被释放）为自由变量提供绑定的计算环境（作用域）。  
+  3.闭包的实现确保只要闭包还被使用，那么被闭包引用的变量会一直存在。  
+  ```
+  package main
+
+  import "fmt" //引入依赖包
+
+  func test(i int) func()  {
+      return func(){
+          fmt.Println(10+i)
+          fmt.Printf("%p\n",&i)
+          fmt.Printf("%d\n",i)
+      }
+
+  }
+
+  func main() {
+      a := test(1);
+      b := test(2)
+      fmt.Println("execute func a")
+      a()
+      fmt.Println("execute func b")
+      b()
+  }
+  ```
   
