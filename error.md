@@ -143,6 +143,7 @@ func f3() (i int) {
     return 1
 }
 func main() {
-    fmt.Println(f3())
+    fmt.Println(f3())//其结果竟然是2. 读取1再++
 }
 ```
+
