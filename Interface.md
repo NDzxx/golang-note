@@ -74,3 +74,9 @@ func main() {
 src\goMethod_1.go:58: cannot use people (type People) as type Speaker in assignment:
 	People does not implement Speaker (SayHi method has pointer receiver)
 ```
+修改一下
+```
+//speaker = people
+speaker = &people
+speaker.SayHi()
+```
