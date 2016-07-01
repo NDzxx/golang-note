@@ -146,4 +146,14 @@ func main() {
     fmt.Println(f3())//其结果竟然是2. 读取1再++
 }
 ```
-
+实际使用例子  
+例如关闭文件句柄：
+```
+srcFile,err := os.Open("myFile")
+defer srcFile.Close()
+```
+关闭互斥锁：
+```
+mutex.Lock()
+defer mutex.Unlock()
+```
