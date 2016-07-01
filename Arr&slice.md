@@ -30,7 +30,7 @@
       fmt.Println("sa done")
       //从make创建,make第2个参数是长度，第3个参数是开辟的空间上限
       var mySlice2 []int = make([]int, 5, 10)
-      /*错误例子，这样会超出容量
+      /*错误例子，这样会超出长度
       for i := 0; i < cap(mySlice2); i++{
           mySlice2[i] = i
       }*/
