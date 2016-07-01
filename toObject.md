@@ -9,7 +9,8 @@ b.Mofify()
   基本类型: byte, int, float32, float64, string  
   复合类型: struct, array, pointer  
 - 引用语义  
-  slice, map, channel, interface.
+  slice, map, channel, interface.  
+  
 ##结构体  
 ```
   package main
