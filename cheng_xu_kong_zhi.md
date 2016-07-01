@@ -38,4 +38,25 @@ world
 world
 nima
 ```
+- 循环 (go语言只有for循环)
+  ```
+  package main
 
+  import "fmt" //引入依赖包
+
+  func main() {
+      sum := 0
+      for i := 0; i <= 100; i++ {
+          sum += i
+      }
+      fmt.Println(sum)
+
+      sum = 0
+      i := 0
+      for(i <= 100){
+        sum += i
+        i++
+      }
+      fmt.Println(sum)
+  }
+  ```
