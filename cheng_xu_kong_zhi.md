@@ -1,2 +1,41 @@
 # 程序控制
+- switch语句  
+switch语句不需要在每个case地下写break,默认就是执行break.  
+如果要执行多个case, 在case最后加入fallthrough.  
+条件表达式不限制为常量或者整数.单个case自然可以有多个结果可以选.  
+  ```  
+  package main
+
+  import "fmt" //引入依赖包
+
+  func test(a int) {
+      switch {
+      case a < 0:
+          fmt.Println("hello")
+      case a == 10:
+          fmt.Println("a==10")
+          fallthrough
+      case a > 10 && a < 100:
+          fmt.Println("world")
+          break
+      default:
+          fmt.Println("nima")
+      }
+  }
+
+  func main() {
+      test(-1)
+      test(10)
+      test(15)
+      test(100)
+  }
+  ```
+结果
+```
+hello
+a==10
+world
+world
+nima
+```
 
