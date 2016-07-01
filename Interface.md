@@ -1,2 +1,76 @@
 # 接口
+**先上结论：
+这说明对于对象的方法, 无论接受者是对象还是对象指针, 都没
+任何问题.   
+但是如果是借口,如果接口中存在某个方法,绑定的接收者是对象指针,那么这个接口
+也只能被该对象指针赋值.**
 
+看例子1
+```
+package main
+
+import(
+	"fmt"
+)
+//定义接口Speaker和Learner
+type Speaker interface{
+	SayHi()
+}
+
+type Learner interface{
+	SayHi()
+	Study()
+}
+
+//定义对象People、Teacher和Student
+type People struct {
+	Name string
+}
+
+type Teacher struct{
+	People
+	Department string
+}
+
+type Student struct{
+	People
+	School string
+}
+
+//对象方法实现
+func (p *People) SayHi() {
+	fmt.Printf("Hi, I'm %s. Nice to meet you!\n",p.Name)
+}
+
+func (t *Teacher) SayHi(){
+	fmt.Printf("Hi, my name is %s. I'm working in %s .\n", t.Name, t.Department)
+}
+
+func (s *Student) SayHi() {
+	fmt.Printf("Hi, my name is %s. I'm studying in %s.\n", s.Name, s.School)
+}
+
+func (s *Student) Study() {
+	fmt.Printf("I'm learning Golang in %s.\n", s.School)
+}
+
+
+func main() {
+
+	//初始化对象
+	people := People{"张三"}
+	//  teacher := &Teacher{People{"郑智"}, "Computer Science"}
+	//  student := &Student{People{"李明"}, "Yale University"}
+
+	var speaker Speaker   //定义Speaker接口类型的变量
+
+	speaker = people
+	speaker.SayHi()
+}
+```
+结果：
+```
+# command-line-arguments
+src\goInterface1.go:28: cannot use a (type Integer) as type Adder in assignment:
+	Integer does not implement Adder (Add method has pointer receiver)
+```
