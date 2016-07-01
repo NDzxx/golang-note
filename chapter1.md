@@ -19,3 +19,5 @@ go web基础
 http://www.ucai.cn/course/show/87
 游戏服务器框架 Leaf/go
 http://studygolang.com/p/leafgo
+golang 项目多文件编程示例
+http://studygolang.com/articles/4981
