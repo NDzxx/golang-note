@@ -55,3 +55,5 @@
       fmt.Println("mySlice2:",mySlice2)
   }
   ```
+- slice和数组传参的比较
+  
