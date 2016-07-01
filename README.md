@@ -1,3 +1,3 @@
-# My Awesome Book
+# Golang Note
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+新项目用到go,学习并记录下一些相关知识，以免遗忘
