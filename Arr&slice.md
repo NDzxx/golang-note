@@ -2,8 +2,8 @@
 - 数组
   ```
   var v1 [32]byte
-  [2*N] struct { x, y int32 }
-  [1000]*float64
-  [3][5]int
-  [2][2][2]float64
+  var v2 [2*N] struct { x, y int32 }
+  var v3 [1000]*float64
+  var v4 [3][5]int
+  var v5 [2][2][2]float64
   ```
