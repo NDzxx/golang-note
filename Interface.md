@@ -1,7 +1,45 @@
 # 接口
 go的借口是非侵入式的, 只要实现了接口定义的方法, 就等于实现了该接口。  
 换句话说, 接口的实现和定义式可以分离不相关的。  
+例子：  
+```
+package main
 
+import(
+  "fmt"
+)
+
+type Integer int
+
+func (a Integer) Less(b Integer) bool {
+  return a < b
+}
+
+func (a *Integer) Add(b Integer) {
+  *a += b
+}
+
+//定义接口
+type LessAdder interface {
+  Less(b Integer) bool //函数声明
+  Add(b Integer) //函数声明
+}
+
+func main() {
+  var a Integer = 10
+  var b LessAdder = &a //道理我们前面提到过了,Add接收者是个对象指针
+  fmt.Println(b.Less(5))
+  b.Add(20)
+  fmt.Println(a)
+}
+```
+只要两个接口拥
+有相同的方法列表（次序不同不要紧），那么它们就是等同的，可以相互赋值。
+
+接口赋值并不要求两个接口必须等价。如果接口A的方法列表是接口B的方法列表的子集，
+那么接口B可以赋值给接口A。
+
+##接口的大坑
 
 
 **先上结论：
