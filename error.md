@@ -201,6 +201,5 @@ func copyFile(dstName, srcName string) (copylen int64, err error) {
 }
 ```
 **滥用defer可能导致性能问题：**
-```
 
-```
+##defer-panic-recover
