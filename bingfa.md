@@ -69,4 +69,9 @@ var ch1 chan int // 双向
 var ch2 chan<- float64// 只写
 var ch3 <-chan int // 只读
 ```
+关闭channel
 
+close(ch)  
+如何判断一个channel是否已经被关闭？我们可以在读取的时候使用多重返回值的方式：
+
+x, ok := <-ch
