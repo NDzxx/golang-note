@@ -100,7 +100,7 @@
 
   func main() {
       oriSlice := []int{1, 2, 3, 4, 5}
-      reSlice := oriSlice[2:5]//从oriSlice[2]起向后截取5-2个
+      reSlice := oriSlice[2:5]//从oriSlice[2]起向后截取5-2个，包括oriSlice[2]
       //reSlice := oriSlice[:]
       fmt.Println(reSlice)
   }
