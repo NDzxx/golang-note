@@ -26,7 +26,7 @@ func main() {
 
 线程间通信模型基本上常用的也就是两种,共享内存和消息队列.  
 后者目前看来比较流行, 比如akka(actor模型), zmq(消息队列模型)等 都是基于消息队列的并发模型.
-
+#channel
 go也是采用了消息队列的方式, 这里就是channel.
 
 channel的申明形式:
@@ -59,5 +59,5 @@ for i := range ch {
  fmt.Println("Received:", i)
 }
 ```
-
+##单向channel
 
