@@ -203,3 +203,35 @@ func copyFile(dstName, srcName string) (copylen int64, err error) {
 **滥用defer可能导致性能问题：**
 
 ##defer-panic-recover
+当在一个函数执行过程中调用panic()函数时，正常的函数执行流程将立即终止，但函数中
+之前使用defer 关键字延迟执行的语句将正常展开执行，之后该函数将返回到调用函数，并导致
+逐层向上执行panic流程，直至所属的goroutine 中所有正在执行的函数被终止。错误信息将被报
+告，包括在调用panic()函数时传入的参数，这个过程称为错误处理流程
+
+```
+package main
+
+
+import "fmt"
+func main() {
+	defer func() {     //必须要先声明defer，否则不能捕获到panic异常
+		fmt.Println("c")
+		if err := recover(); err != nil {
+			fmt.Println(err)    //这里的err其实就是panic传入的内容，55
+		}
+
+		fmt.Println("d")
+	}()
+	f()
+}
+
+
+func f() {
+	fmt.Println("a")
+	panic(55)
+	fmt.Println("b")
+
+	fmt.Println("f")
+}
+
+```
