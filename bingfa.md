@@ -52,9 +52,12 @@ ch <- value
 
 chan读取数据
 
-value : = <-ch
-对于带buffer的chan也可以用for和range读取:
+value : = <-ch  
+对于带buffer的chan也可以用for和range读取:  
+```
 for i := range ch {
  fmt.Println("Received:", i)
 }
+```
+
 
