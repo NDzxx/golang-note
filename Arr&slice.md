@@ -90,6 +90,21 @@
   /* 拷贝 src 的内容到 des */
   copy(des,src)
   ```
+- ReSlice
+  ```
+  package main
+
+  import (
+      "fmt"
+  )
+
+  func main() {
+      oriSlice := []int{1, 2, 3, 4, 5}
+      reSlice := oriSlice[2:5]//从oriSlice[2]起向后截取5-2个
+      //reSlice := oriSlice[:]
+      fmt.Println(reSlice)
+  }
+  ```
 - map  
   用法见例子
   ```  
