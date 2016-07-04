@@ -75,3 +75,33 @@ close(ch)
 如何判断一个channel是否已经被关闭？我们可以在读取的时候使用多重返回值的方式：
 
 x, ok := <-ch
+例子：
+```
+package main
+
+import (
+  "fmt"
+)
+
+func RandomSignal(ch chan int)  {
+  for i:= 0; i <= 9; i++{
+    select{
+      //写入1事件
+      case ch <- 1:
+      //写入0事件
+      case ch <- 0:
+    }
+  }
+  close(ch)
+}
+
+func main() {
+  //var ch chan int = make(chan int)效果一样
+  //但是有些微妙的不同
+  var ch chan int = make(chan int,1)
+  go RandomSignal(ch)
+  for value := range ch{
+    fmt.Println(value)
+  }
+}
+```
