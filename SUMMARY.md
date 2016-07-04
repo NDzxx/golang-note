@@ -8,7 +8,7 @@
 * [面向对象编程](toObject.md)
    * [为类型添加方法](method.md)
    * [接口](Interface.md)
-   * [继承](intend.md)
+   * [类似继承的处理方式](intend.md)
 * [错误和异常](error.md)
 * [多文件示例](files.md)
 
