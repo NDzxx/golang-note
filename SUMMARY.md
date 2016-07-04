@@ -11,5 +11,5 @@
    * [类似继承的处理方式](intend.md)
 * [错误和异常](error.md)
 * [多文件示例](files.md)
-* 并发
+* [并发](bingfa.md)
 
