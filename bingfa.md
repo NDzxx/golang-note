@@ -64,3 +64,9 @@ for i := range ch {
 否则根本没法用。假如一个channel真的只能读，那么肯定只会是空的，因为你没机会往里面写数
 据。同理，如果一个channel只允许写，即使写进去了，也没有意义，因为没有机会读取里面
 的数据。所以的单向channel概念，其实只是对channel的一种使用限制。
+```
+var ch1 chan int // 双向
+var ch2 chan<- float64// 只写
+var ch3 <-chan int // 只读
+```
+
