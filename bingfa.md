@@ -42,3 +42,14 @@ ch := make(chan int)
 和
 
 ch := make(chan int,capacity)
+前者写入和读取是阻塞的, 后者自带了一个buffer,
+如果没有达到capacity, 是非阻塞的, 达到capacity才会阻塞. 读取的话, 如果为buffer空,
+会阻塞.
+
+chan写入数据
+
+ch <- value
+
+chan读取数据
+
+value : = <-ch
