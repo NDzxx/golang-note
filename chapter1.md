@@ -27,3 +27,8 @@ defer你真的懂了吗
 http://studygolang.com/articles/2593  
 错误处理  
 http://studygolang.com/articles/1893
+
+Go语言设计模式实践：组合（Composite）
+http://studygolang.com/articles/1980
+Go语言设计模式实践：迭代器（Iterator）
+http://studygolang.com/articles/1981
