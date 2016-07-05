@@ -40,4 +40,5 @@ https://github.com/djimenez/iconv-go
 
 读取xml  
 http://blog.studygolang.com/tag/xml/  
-
+go语言中实现输出日志内容到log文件
+http://www.crifan.com/go_language_output_info_to_log_file/
