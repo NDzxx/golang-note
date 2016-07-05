@@ -18,5 +18,5 @@
 * [log类的使用](log.md)
 * [json](json.md)
 * [ini](ini.md)
-* Go中的make和new的区别
+* [Go中的make和new的区别](gozhong_de_make_he_new_de_qu_bie.md)
 
