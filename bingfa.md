@@ -104,3 +104,20 @@ func main() {
   }
 }
 ```
+##超时处理机制
+例子：  
+```
+ timeout:= make(chan bool,1)
+ go func() {
+	time.Sleep(1e9)//等待1秒钟
+	timeout <- true
+}()
+
+select {
+	case <-ch:
+	//从ch中读取到数据
+	case <-timeout:
+	//一直没有从ch中读取到数据，但是从timeout中读取到了
+	
+}
+```
