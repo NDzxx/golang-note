@@ -125,7 +125,7 @@ select {
 ```
 var Once synv.Once
 func DoPrint() {
-  once.Do(setup)
+  once.Do(setup)//保证全局范围内只调用setup一次
   print(a)
 }
 ```
