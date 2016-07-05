@@ -40,5 +40,7 @@ https://github.com/djimenez/iconv-go
 
 读取xml  
 http://blog.studygolang.com/tag/xml/  
-go语言中实现输出日志内容到log文件
-http://www.crifan.com/go_language_output_info_to_log_file/
+go语言中实现输出日志内容到log文件  
+http://www.crifan.com/go_language_output_info_to_log_file/  
+go语言日志记录功能，重点：linux下通过go语言获得系统进程cpu使用情况   
+http://www.cnblogs.com/ghj1976/archive/2013/03/17/2965047.html
