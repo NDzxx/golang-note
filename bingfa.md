@@ -121,3 +121,11 @@ select {
 	
 }
 ```
+##全局唯一性操作
+```
+var Once synv.Once
+func DoPrint() {
+  once.Do(setup)
+  print(a)
+}
+```
