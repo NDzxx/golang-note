@@ -37,3 +37,7 @@
       }
   }
   ```
+  
+  clion下使用，run->Edit configuration ,点 + 选择go test
+  入下图
+  ![clion go test使用](clion.jpg)
