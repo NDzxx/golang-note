@@ -33,8 +33,11 @@ Go语言设计模式实践：迭代器（Iterator）
 http://studygolang.com/articles/1981  
 iconv support for Go Go中进行字符集转换   
 https://github.com/djimenez/iconv-go  
-可能的gui工具
-1、goqt，LiteIDE作者出品，Go和QT的绑定，处于实验阶段
-2、https://github.com/mattn/go-gtk 
-3、walk，Windows Application Library Kit  https://github.com/lxn/walk
+可能的gui工具  
+1、goqt，LiteIDE作者出品，Go和QT的绑定，处于实验阶段  
+2、https://github.com/mattn/go-gtk   
+3、walk，Windows Application Library Kit  https://github.com/lxn/walk  
+
+读取xml  
+http://blog.studygolang.com/tag/xml/  
 
