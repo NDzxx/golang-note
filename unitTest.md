@@ -6,4 +6,8 @@
   //以Test为函数名前缀，t *testing.T为单一参数
   func TestAdd1(t *testing.T) 
   ```
-- 性能测试函数
+- 性能测试函数  
+  ```
+  //以Benchmark为函数名前缀，t *testing.T为单一参数
+  func BenchmarkAdd1(t *testing.T) 
+  ```
