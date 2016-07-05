@@ -6,8 +6,11 @@
   //以Test为函数名前缀，t *testing.T为单一参数
   func TestAdd1(t *testing.T) 
   ```
+  根据是否错误返回不同结果
 - 性能测试函数  
   ```
   //以Benchmark为函数名前缀，t *testing.T为单一参数
   func BenchmarkAdd1(t *testing.T) 
   ```
+  打印测试过程中花费的时间
+  
