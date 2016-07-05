@@ -1,5 +1,5 @@
 # ini
-使用无闻的"github.com/go-ini/ini"库
+使用无闻的ini库：https://github.com/go-ini/ini/  
 ```
 package main
 
