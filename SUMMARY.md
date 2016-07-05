@@ -17,5 +17,5 @@
 * [xml处理](xml.md)
 * [log类的使用](log.md)
 * [json](json.md)
-* ini
+* [ini](ini.md)
 
