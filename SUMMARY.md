@@ -18,4 +18,5 @@
 * [log类的使用](log.md)
 * [json](json.md)
 * [ini](ini.md)
+* Go中的make和new的区别
 
