@@ -33,11 +33,6 @@ Go语言设计模式实践：迭代器（Iterator）
 http://studygolang.com/articles/1981  
 iconv support for Go Go中进行字符集转换   
 https://github.com/djimenez/iconv-go  
-可能的gui工具  
-1、goqt，LiteIDE作者出品，Go和QT的绑定，处于实验阶段  
-2、https://github.com/mattn/go-gtk   
-3、walk，Windows Application Library Kit  https://github.com/lxn/walk  
-
 读取xml  
 http://blog.studygolang.com/tag/xml/  
 go语言中实现输出日志内容到log文件  
@@ -45,4 +40,15 @@ http://www.crifan.com/go_language_output_info_to_log_file/
 go语言日志记录功能，重点：linux下通过go语言获得系统进程cpu使用情况   
 http://www.cnblogs.com/ghj1976/archive/2013/03/17/2965047.html  
 ini读写库  
-https://github.com/go-ini/ini/  
+https://github.com/go-ini/ini/   
+go编程基础   
+https://github.com/Unknwon/go-fundamental-programming  
+go入门指南
+https://github.com/Unknwon/the-way-to-go_ZH_CN  
+
+可能的gui工具  
+1、goqt，LiteIDE作者出品，Go和QT的绑定   
+http://git.oschina.net/visualfc/goqt  
+2、https://github.com/mattn/go-gtk     
+3、walk，Windows Application Library Kit  
+https://github.com/lxn/walk 
