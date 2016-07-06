@@ -132,3 +132,7 @@ func DoPrint() {
   print(a)
 }
 ```
+##相关函数
+runtime.Gosched函数
+
+我们在前面的示例中多次用到了runtime.Gosched函数。该函数的作用是暂停调用它的Goroutine的运行。调用它的Goroutine会被重新置于Grunnable状态，并被放入到调度器的可运行G队列中。这也是使用“暂停”这个词的原因。因为经过调度器的调度，该Goroutine不久就会再次被运行。这样做完全是为了让其他Goroutine立即有被运行的机会。
