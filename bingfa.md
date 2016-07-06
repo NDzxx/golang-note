@@ -1,8 +1,8 @@
 # go并发编程
 并发不是并行. 并发比并行更加优秀.   
 并发是时间片轮换, 并行是多核计算. 事实上, 并行可以由并发指定到多个cpu执行.  
-numcpu := runtime.NumCPU()
-runtime.GOMAXPROCS(numcpu) //设置使用多少个cpu核心
+numcpu := runtime.NumCPU()  
+runtime.GOMAXPROCS(numcpu) //设置使用多少个cpu核心  
 
 
 ```
