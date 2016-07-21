@@ -114,7 +114,7 @@
   ```
 * slice比较 
  
-```
+```golang
  func In_slice(val interface{}, slice []interface{}) bool { 
     for _, v := range slice { 
     if v == val { 
