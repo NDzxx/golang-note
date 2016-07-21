@@ -1,5 +1,6 @@
 # 数组和slice
-- 数组
+
+* 数组
   ```
   var v1 [32]byte
   var v2 [2*N] struct { x, y int32 }
@@ -7,12 +8,14 @@
   var v4 [3][5]int
   var v5 [2][2][2]float64
   ```
+
   数组的遍历和字符串一样,这里不再重复.
   数组是值类型,在赋值时会拷贝一份.
-- 数组切片（slice，类似C++ vector）
-  - 切片的创建
-  切片有两种创建方式, 一种是基于数组创建, 另一种是用make创建.  
-  
+* 数组切片（slice，类似C++ vector）
+
+  * 切片的创建
+    切片有两种创建方式, 一种是基于数组创建, 另一种是用make创建.  
+
   ```
   package main
 
@@ -55,9 +58,10 @@
       fmt.Println("mySlice2:",mySlice2)
   }
   ```
-- slice和数组传参的比较  
 
-  ```  
+* slice和数组传参的比较
+
+  ```
   package main
 
   import "fmt" //引入依赖包
@@ -83,14 +87,17 @@
       fmt.Println("slice after test func",mySlice)
   }
   ```
-- append  和 copy
+
+* append  和 copy
   ```
   mySlice = append(mySlice, 1, 2, 3)
   mySlice = append(mySlice, mySlice2...)//append可以添加slice到slice
   /* 拷贝 src 的内容到 des */
   copy(des,src)
   ```
-- ReSlice
+
+* ReSlice
+
   ```
   package main
 
@@ -105,9 +112,32 @@
       fmt.Println(reSlice)
   }
   ```
-- map  
+* slice比较 
+ 
+```
+ func In_slice(val interface{}, slice []interface{}) bool { 
+    for _, v := range slice { 
+    if v == val { 
+        return true 
+      } 
+    } 
+    return false 
+ } 
+
+ func Slice_diff(slice1, slice2 []interface{}) (diffslice []interface{}) {
+     for _, v := range slice1 { 
+    if !In_slice(v, slice2) {
+     diffslice = append(diffslice, v) 
+                } 
+            } 
+    return 
+} 
+```
+
+* map  
   用法见例子
-  ```  
+
+  ```
   package main
 
   import "fmt" //引入依赖包
@@ -143,3 +173,6 @@
     }
   }
   ```
+
+
+
