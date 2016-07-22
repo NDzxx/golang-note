@@ -22,4 +22,5 @@
 * [附录](fu_lu.md)
     * [markdownDemo](markdowndemo.md)
     * [beego\_orm](beegoorm.md)
+    * [linux mac下的安装和编译](linux-mac下的安装和编译.md)
 
