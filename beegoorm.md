@@ -45,5 +45,4 @@ func main() {
 
 ```  
 使用文档：
-  
-http://beego.me/docs/mvc/model/overview.md
+   [beego文档](http://beego.me/docs/mvc/model/overview.md)
