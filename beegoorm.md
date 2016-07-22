@@ -44,5 +44,4 @@ func main() {
 }
 
 ```  
-使用文档：  
-   [beego文档](http://beego.me/docs/mvc/model/overview.md)
+使用文档：[beego文档](http://beego.me/docs/mvc/model/overview.md)
