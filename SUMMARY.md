@@ -21,4 +21,5 @@
 * [Go中的make和new的区别](gozhong_de_make_he_new_de_qu_bie.md)
 * [附录](fu_lu.md)
     * [markdownDemo](markdowndemo.md)
+    * [beego\_orm](beegoorm.md)
 
