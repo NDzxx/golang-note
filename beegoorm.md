@@ -1,6 +1,6 @@
-##直接分割beego的数据库框架orm可以使用
+## 直接分割beego的数据库框架orm可以使用
 
-```
+```go
 package main
 
 import (
@@ -43,5 +43,7 @@ func main() {
      //fmt.Println(num, err)
 }
 
-```  
+```
+
 使用文档：[beego文档](http://beego.me/docs/mvc/model/overview.md)
+
