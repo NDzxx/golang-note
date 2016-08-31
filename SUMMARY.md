@@ -22,5 +22,6 @@
 * [附录](fu_lu.md)
     * [beego\_orm](beegoorm.md)
     * [项目和坑](项目和坑.md)
+    * [条件编译](条件编译.md)
 * [swig](swig.md)
 
