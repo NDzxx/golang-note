@@ -193,40 +193,223 @@ func BenchmarkRadixRedisLRange100(b *testing.B) {
 再看redigo测试代码
 
 ```go
-
 package main
 
-import ( "testing"
 
- "github.com/garyburd/redigo/redis")
+
+import (
+
+"testing"
+
+
+
+"github.com/garyburd/redigo/redis"
+
+)
+
+
 
 var garyburdRedigoClient redis.Conn
 
-func TestGaryburdRedigoConnect(t *testing.T) { var s interface{} var err error
 
- garyburdRedigoClient, err = redis.Dial("tcp", "127.0.0.1:6379")
 
- if err != nil { t.Fatalf("Connect failed: %v", err) }
+func TestGaryburdRedigoConnect(t *testing.T) {
 
- s, err = garyburdRedigoClient.Do("PING")
+var s interface{}
 
- if err != nil { t.Fatalf("Command failed: %v", err) }
+var err error
 
- if s.(string) != "PONG" { t.Fatalf("Failed") }}
 
-func BenchmarkGaryburdRedigoPing(b *testing.B) { var err error garyburdRedigoClient.Do("DEL", "hello") for i := 0; i < b.N; i++ { _, err = garyburdRedigoClient.Do("PING") if err != nil { b.Fatalf(err.Error()) break } }}
 
-func BenchmarkGaryburdRedigoSet(b *testing.B) { var err error for i := 0; i < b.N; i++ { _, err = garyburdRedigoClient.Do("SET", "hello", 1) if err != nil { b.Fatalf(err.Error()) break } }}
+garyburdRedigoClient, err = redis.Dial("tcp", "127.0.0.1:6379")
 
-func BenchmarkGaryburdRedigoGet(b *testing.B) { var err error for i := 0; i < b.N; i++ { _, err = garyburdRedigoClient.Do("GET", "hello") if err != nil { b.Fatalf(err.Error()) break } }}
 
-func BenchmarkGaryburdRedigoIncr(b *testing.B) { var err error for i := 0; i < b.N; i++ { _, err = garyburdRedigoClient.Do("INCR", "hello") if err != nil { b.Fatalf(err.Error()) break } }}
 
-func BenchmarkGaryburdRedigoLPush(b *testing.B) { var err error garyburdRedigoClient.Do("DEL", "hello") for i := 0; i < b.N; i++ { _, err = garyburdRedigoClient.Do("LPUSH", "hello", i) if err != nil { b.Fatalf(err.Error()) break } }}
+if err != nil {
 
-func BenchmarkGaryburdRedigoLRange10(b *testing.B) { var err error for i := 0; i < b.N; i++ { _, err = garyburdRedigoClient.Do("LRANGE", "hello", 0, 10) if err != nil { b.Fatalf(err.Error()) break } }}
+t.Fatalf("Connect failed: %v", err)
 
-func BenchmarkGaryburdRedigoLRange100(b *testing.B) { var err error for i := 0; i < b.N; i++ { _, err = garyburdRedigoClient.Do("LRANGE", "hello", 0, 100) if err != nil { b.Fatalf(err.Error()) break } }}
+}
+
+
+
+s, err = garyburdRedigoClient.Do("PING")
+
+
+
+if err != nil {
+
+t.Fatalf("Command failed: %v", err)
+
+}
+
+
+
+if s.(string) != "PONG" {
+
+t.Fatalf("Failed")
+
+}
+
+}
+
+
+
+func BenchmarkGaryburdRedigoPing(b *testing.B) {
+
+var err error
+
+garyburdRedigoClient.Do("DEL", "hello")
+
+for i := 0; i < b.N; i++ {
+
+_, err = garyburdRedigoClient.Do("PING")
+
+if err != nil {
+
+b.Fatalf(err.Error())
+
+break
+
+}
+
+}
+
+}
+
+
+
+func BenchmarkGaryburdRedigoSet(b *testing.B) {
+
+var err error
+
+for i := 0; i < b.N; i++ {
+
+_, err = garyburdRedigoClient.Do("SET", "hello", 1)
+
+if err != nil {
+
+b.Fatalf(err.Error())
+
+break
+
+}
+
+}
+
+}
+
+
+
+func BenchmarkGaryburdRedigoGet(b *testing.B) {
+
+var err error
+
+for i := 0; i < b.N; i++ {
+
+_, err = garyburdRedigoClient.Do("GET", "hello")
+
+if err != nil {
+
+b.Fatalf(err.Error())
+
+break
+
+}
+
+}
+
+}
+
+
+
+func BenchmarkGaryburdRedigoIncr(b *testing.B) {
+
+var err error
+
+for i := 0; i < b.N; i++ {
+
+_, err = garyburdRedigoClient.Do("INCR", "hello")
+
+if err != nil {
+
+b.Fatalf(err.Error())
+
+break
+
+}
+
+}
+
+}
+
+
+
+func BenchmarkGaryburdRedigoLPush(b *testing.B) {
+
+var err error
+
+garyburdRedigoClient.Do("DEL", "hello")
+
+for i := 0; i < b.N; i++ {
+
+_, err = garyburdRedigoClient.Do("LPUSH", "hello", i)
+
+if err != nil {
+
+b.Fatalf(err.Error())
+
+break
+
+}
+
+}
+
+}
+
+
+
+func BenchmarkGaryburdRedigoLRange10(b *testing.B) {
+
+var err error
+
+for i := 0; i < b.N; i++ {
+
+_, err = garyburdRedigoClient.Do("LRANGE", "hello", 0, 10)
+
+if err != nil {
+
+b.Fatalf(err.Error())
+
+break
+
+}
+
+}
+
+}
+
+
+
+func BenchmarkGaryburdRedigoLRange100(b *testing.B) {
+
+var err error
+
+for i := 0; i < b.N; i++ {
+
+_, err = garyburdRedigoClient.Do("LRANGE", "hello", 0, 100)
+
+if err != nil {
+
+b.Fatalf(err.Error())
+
+break
+
+}
+
+}
+
+}
 
 ```
 
