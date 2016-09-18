@@ -1,8 +1,9 @@
-#redis golang驱动测试
+# redis golang驱动测试
 
 golang官方推荐的redis驱动有两个，redigo和radix
 
 现在测试一下二者的执行效率 radix
+
 ```
 package main
 
@@ -190,8 +191,10 @@ func BenchmarkRadixRedisLRange100(b *testing.B) {
 
 }
 ```
+
 再看redigo测试代码
-```
+
+```golang
 package main
 
 import ( "testing"
@@ -227,5 +230,4 @@ func BenchmarkGaryburdRedigoLRange10(b *testing.B) { var err error for i := 0; i
 func BenchmarkGaryburdRedigoLRange100(b *testing.B) { var err error for i := 0; i < b.N; i++ { _, err = garyburdRedigoClient.Do("LRANGE", "hello", 0, 100) if err != nil { b.Fatalf(err.Error()) break } }}
 
 ```
-
 
