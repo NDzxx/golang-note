@@ -223,6 +223,7 @@ func TestGaryburdRedigoConnect(t *testing.T) {
     t.Fatalf("Failed") }
  }
 
+func BenchmarkGaryburdRedigoPing(b *testing.B) { var err error garyburdRedigoClient.Do("DEL", "hello") for i := 0; i < b.N; i++ { _, err = garyburdRedigoClient.Do("PING") if err != nil { b.Fatalf(err.Error()) break } }}
 
 ```
 
