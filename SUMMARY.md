@@ -24,4 +24,5 @@
     * [项目和坑](项目和坑.md)
     * [条件编译](条件编译.md)
 * [swig](swig.md)
+* [redis driver test](redis-driver-test.md)
 
