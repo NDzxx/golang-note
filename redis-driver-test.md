@@ -200,9 +200,6 @@ package main
 import (
 
 "testing"
-
-
-
 "github.com/garyburd/redigo/redis"
 
 )
