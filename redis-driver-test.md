@@ -4,7 +4,7 @@ golang官方推荐的redis驱动有两个，redigo和radix
 
 现在测试一下二者的执行效率 radix
 
-```
+```golang
 package main
 
 import (
