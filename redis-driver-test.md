@@ -196,6 +196,9 @@ func BenchmarkRadixRedisLRange100(b *testing.B) {
 
 ```golang  
 package main
+import (     "testing"
+
+     "github.com/garyburd/redigo/redis")
 
 
 ```
