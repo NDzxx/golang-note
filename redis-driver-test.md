@@ -4,7 +4,7 @@ golang官方推荐的redis驱动有两个，redigo和radix
 
 现在测试一下二者的执行效率 radix
 
-```golang
+```go
 package main
 
 import (
@@ -192,9 +192,9 @@ func BenchmarkRadixRedisLRange100(b *testing.B) {
 }
 ```
 
-再看redigo测试代码  
+再看redigo测试代码
 
-```golang  
+```go
 package main
 import (     
     "testing"
