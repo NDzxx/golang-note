@@ -203,17 +203,25 @@ import (
 
 var garyburdRedigoClient redis.Conn
 
-func TestGaryburdRedigoConnect(t *testing.T) { var s interface{} var err error
+func TestGaryburdRedigoConnect(t *testing.T) {
+ var s interface{}
+ var err error
 
  garyburdRedigoClient, err = redis.Dial("tcp", "127.0.0.1:6379")
 
- if err != nil { t.Fatalf("Connect failed: %v", err) }
+ if err != nil { 
+    t.Fatalf("Connect failed: %v", err) 
+ }
 
  s, err = garyburdRedigoClient.Do("PING")
 
- if err != nil { t.Fatalf("Command failed: %v", err) }
+ if err != nil { 
+    t.Fatalf("Command failed: %v", err) 
+ }
 
- if s.(string) != "PONG" { t.Fatalf("Failed") }}
+ if s.(string) != "PONG" { 
+    t.Fatalf("Failed") }
+ }
 
 
 ```
