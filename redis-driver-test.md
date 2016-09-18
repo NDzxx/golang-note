@@ -474,4 +474,5 @@ BenchmarkRadixRedisLRange10-4 30000 96289 ns/op
 
 BenchmarkRadixRedisLRange100-4 20000 153149 ns/op
 
+对比可以看出，redisgo更好一些
 
