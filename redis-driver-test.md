@@ -409,4 +409,69 @@ break
 }
 
 ```
+测试结果：
+win
+
+PASS
+
+BenchmarkGaryburdRedigoPing-8 50000 29163 ns/op
+
+BenchmarkGaryburdRedigoSet-8 50000 33424 ns/op
+
+BenchmarkGaryburdRedigoGet-8 50000 31694 ns/op
+
+BenchmarkGaryburdRedigoIncr-8 50000 32754 ns/op
+
+BenchmarkGaryburdRedigoLPush-8 50000 32374 ns/op
+
+BenchmarkGaryburdRedigoLRange10-8 30000 40621 ns/op
+
+BenchmarkGaryburdRedigoLRange100-8 20000 83660 ns/op
+
+BenchmarkRadixPing-8 50000 31594 ns/op
+
+BenchmarkRadixSet-8 50000 34164 ns/op
+
+BenchmarkRadixGet-8 50000 33064 ns/op
+
+BenchmarkRadixRedisIncr-8 50000 34044 ns/op
+
+BenchmarkRadixRedisLPush-8 50000 33714 ns/op
+
+BenchmarkRadixRedisLRange10-8 30000 45605 ns/op
+
+BenchmarkRadixRedisLRange100-8 10000 123662 ns/op
+
+Linux
+
+PASS
+
+BenchmarkGaryburdRedigoPing-4 50000 79361 ns/op
+
+BenchmarkGaryburdRedigoSet-4 30000 81639 ns/op
+
+BenchmarkGaryburdRedigoGet-4 30000 81025 ns/op
+
+BenchmarkGaryburdRedigoIncr-4 30000 81883 ns/op
+
+BenchmarkGaryburdRedigoLPush-4 30000 82164 ns/op
+
+BenchmarkGaryburdRedigoLRange10-4 30000 86393 ns/op
+
+BenchmarkGaryburdRedigoLRange100-4 30000 110563 ns/op
+
+BenchmarkRadixPing-4 50000 84643 ns/op
+
+BenchmarkRadixSet-4 30000 86513 ns/op
+
+BenchmarkRadixGet-4 30000 85878 ns/op
+
+BenchmarkRadixRedisIncr-4 30000 84889 ns/op
+
+BenchmarkRadixRedisLPush-4 30000 86884 ns/op
+
+BenchmarkRadixRedisLRange10-4 30000 96289 ns/op
+
+BenchmarkRadixRedisLRange100-4 20000 153149 ns/op
+
 
