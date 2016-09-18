@@ -204,26 +204,37 @@ import (
 var garyburdRedigoClient redis.Conn
 
 func TestGaryburdRedigoConnect(t *testing.T) {
- var s interface{}
- var err error
+    var s interface{}
+     var err error
 
- garyburdRedigoClient, err = redis.Dial("tcp", "127.0.0.1:6379")
+     garyburdRedigoClient, err = redis.Dial("tcp", "127.0.0.1:6379")
 
- if err != nil { 
+     if err != nil { 
     t.Fatalf("Connect failed: %v", err) 
- }
+     }
 
- s, err = garyburdRedigoClient.Do("PING")
+     s, err = garyburdRedigoClient.Do("PING")
 
+     if err != nil { 
+       t.Fatalf("Command failed: %v", err) 
+     }
+
+     if s.(string) != "PONG" { 
+        t.Fatalf("Failed") 
+  }
+}
+
+func BenchmarkGaryburdRedigoPing(b *testing.B) { 
+    var err error 
+garyburdRedigoClient.Do("DEL", "hello") 
+for i := 0; i < b.N; i++ { 
+_, err = garyburdRedigoClient.Do("PING")
  if err != nil { 
-    t.Fatalf("Command failed: %v", err) 
- }
-
- if s.(string) != "PONG" { 
-    t.Fatalf("Failed") }
- }
-
-func BenchmarkGaryburdRedigoPing(b *testing.B) { var err error garyburdRedigoClient.Do("DEL", "hello") for i := 0; i < b.N; i++ { _, err = garyburdRedigoClient.Do("PING") if err != nil { b.Fatalf(err.Error()) break } }}
+b.Fatalf(err.Error()) 
+break 
+} 
+}
+}
 
 ```
 
