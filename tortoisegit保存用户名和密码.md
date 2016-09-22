@@ -1,4 +1,4 @@
- TortoiseGit 连接oschina不用每次输入用户名和密码的方法
+#win下TortoiseGit 连接oschina不用每次输入用户名和密码的方法
 
 每次git clone 和push 都要输入用户名和密码。虽然安全，但在本机上每次都输有些麻烦，如何记住用户名和密码呢？
 
