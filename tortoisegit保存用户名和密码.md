@@ -9,3 +9,6 @@
 [credential]
  helper = store
 ```
+
+下次再输入用户名 和密码 时，git就会记住，从而在C:\Documents and Settings\Administrator\ 目录下形成一个 .git-credentials 文件，里面就是保存的你的用户名和密码。 
+
