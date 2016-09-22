@@ -7,7 +7,5 @@
 
 ```git
 [credential]
-
  helper = store
-
 ```
