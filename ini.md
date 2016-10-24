@@ -2,72 +2,63 @@
 
 使用无闻的ini库：[https:\/\/github.com\/go-ini\/ini\/](https://github.com/go-ini/ini/)
 
-    package main
+```golang
+package main
 
-    import (
-        "fmt"
+import (
 
-        "github.com/go-ini/ini"
-    )
+"fmt"
 
-    type Database struct {
-        Ip       string `ini:"ip"`
-        User     string `ini:"user"`
-        Password string `ini:"password"`
-        Dbname   string `ini:"dbname"`
-        Port     string `ini:"port"`
-    }
+"github.com/go-ini/ini"
 
-    type BoxAccountDatabase struct {
-        Ip       string `ini:"ip"`
-        User     string `ini:"user"`
-        Password string `ini:"password"`
-        Dbname   string `ini:"dbname"`
-        Port     string `ini:"port"`
-    }
+)
 
-    type Logger struct {
-        Level int `ini:"level"`
-    }
+type Http struct {
 
-    type iniCfg struct {
-        Database
-        BoxAccountDatabase
-        Logger
-    }
+Port string `ini:"port"`
 
-    func main() {
-        var iniPath string = "E:/Go_src/ini/iniFile/config.ini"
-        cfg, err := ini.Load(iniPath)
-        if err == nil {
-            cfg.BlockMode = false
-            pini := new(iniCfg)
-            err_w := cfg.MapTo(pini)
-            if err_w == nil {
-                fmt.Println(pini)
-            }
-        }
+Mode string `ini:"mode"`
 
-        //fmt.Println(cfg.Section("ServerConfig").Key("ip").String())
+}
 
-    }
+type DataBase struct {
 
-    /*
-     func main() { 
+Ip string `ini:"ip"`
 
-    var iniPath string = "./conf/config.ini"
+User string `ini:"user"`
 
-    cfg := new(iniCfg)
+Password string `ini:"password"`
 
-    err := ini.MapTo(cfg, iniPath)
+Dbname string `ini:"dbname"`
 
-    if err == nil{
+Port string `ini:"port"`
 
-        fmt.Println(cfg)
+}
 
-    }
+type iniCfg struct {
 
-  }
+Http
 
-*/
+DataBase
 
+}
+
+func main() {
+
+var iniPath string = "./conf/config.ini"
+
+cfg := new(iniCfg)
+
+err := ini.MapTo(cfg, iniPath)
+
+if err == nil{
+
+fmt.Println(cfg)
+
+}
+
+}
+
+
+
+```
