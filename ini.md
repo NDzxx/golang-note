@@ -55,44 +55,19 @@
     /*
      func main() { 
 
-```
     var iniPath string = "./conf/config.ini"
-```
 
-```
-    cfg := new(iniCfg)
-```
+    cfg := new(iniCfg)
 
-```
-    err := ini.MapTo(cfg, iniPath)
-```
+    err := ini.MapTo(cfg, iniPath)
 
-```
-    if err == nil{
-```
+    if err == nil{
 
-```
-        fmt.Println(cfg)
-```
+        fmt.Println(cfg)
 
-```
-    }
-```
+    }
 
-```
-   
-```
+  }
 
-```
-
-```
-
-```
-}
-```
-
-
-
-\*\/
-
+*/
 
