@@ -59,7 +59,7 @@
 
 ```
 
-```golang
+```go
 package main
 
 
