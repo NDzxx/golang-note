@@ -1,6 +1,6 @@
 \#js golang双向加密解密解决方案
 
-```
+```js
 <!doctype html>
 
 <html lang="en">
