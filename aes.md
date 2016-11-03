@@ -1,60 +1,61 @@
 \#js golang双向加密解密解决方案
 
+```
+<!doctype html>
 
+<html lang="en">
 
-&lt;!doctype html&gt;
+<head>
 
-&lt;html lang="en"&gt;
+ <meta charset="UTF-8">
 
-&lt;head&gt;
+ <title>需要秘钥（key）及秘钥偏移量（iv）的aes加解密</title>
 
- &lt;meta charset="UTF-8"&gt;
+</head>
 
- &lt;title&gt;需要秘钥（key）及秘钥偏移量（iv）的aes加解密&lt;\/title&gt;
+<body>
 
-&lt;\/head&gt;
+ <script src="aes_1.js"></script>
 
-&lt;body&gt;
+ <script>
 
- &lt;script src="aes\_1.js"&gt;&lt;\/script&gt;
+ var key = CryptoJS.enc.Utf8.parse("1234567812345678");
 
- &lt;script&gt;
+ var iv = CryptoJS.enc.Utf8.parse('1234567890123456');
 
- var key = CryptoJS.enc.Utf8.parse\("1234567812345678"\);
+ function Encrypt(word){
 
- var iv = CryptoJS.enc.Utf8.parse\('1234567890123456'\);
+ var srcs = CryptoJS.enc.Utf8.parse(word);
 
- function Encrypt\(word\){
+ var encrypted = CryptoJS.AES.encrypt(srcs, key, { iv: iv,mode:CryptoJS.mode.CBC,padding: CryptoJS.pad.Pkcs7});
 
- var srcs = CryptoJS.enc.Utf8.parse\(word\);
-
- var encrypted = CryptoJS.AES.encrypt\(srcs, key, { iv: iv,mode:CryptoJS.mode.CBC,padding: CryptoJS.pad.Pkcs7}\);
-
- return encrypted.toString\(\);
-
- }
-
- function Decrypt\(word\){
-
- var decrypt = CryptoJS.AES.decrypt\(word, key, { iv: iv,mode:CryptoJS.mode.CBC,padding: CryptoJS.pad.Pkcs7}\);
-
- var decryptedStr = decrypt.toString\(CryptoJS.enc.Utf8\);
-
- return decryptedStr.toString\(\);
+ return encrypted.toString();
 
  }
 
- var mm = Encrypt\('polaris@studygolang'\)
+ function Decrypt(word){
 
- console.log\(mm\);
+ var decrypt = CryptoJS.AES.decrypt(word, key, { iv: iv,mode:CryptoJS.mode.CBC,padding: CryptoJS.pad.Pkcs7});
 
- var jm = Decrypt\(mm\);
+ var decryptedStr = decrypt.toString(CryptoJS.enc.Utf8);
 
- console.log\(jm\)
+ return decryptedStr.toString();
 
- &lt;\/script&gt;
+ }
 
-&lt;\/body&gt;
+ var mm = Encrypt('polaris@studygolang')
 
-&lt;\/html&gt;
+ console.log(mm);
 
+ var jm = Decrypt(mm);
+
+ console.log(jm)
+
+ </script>
+
+</body>
+
+</html>
+
+
+```
