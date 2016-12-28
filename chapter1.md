@@ -55,3 +55,4 @@ http://git.oschina.net/visualfc/goqt
 https://github.com/lxn/walk   
 gopher-lua go的lua虚拟机  
 https://github.com/yuin/gopher-lua  
+[liteIDE下载](http://www.golangtc.com/download/liteide)
