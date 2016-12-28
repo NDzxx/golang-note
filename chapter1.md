@@ -43,7 +43,7 @@ https://github.com/go-ini/ini)
   
 [go编程基础](https://github.com/Unknwon/go-fundamental-programming)   
   
-[golang连接mysql](http://jingyan.baidu.com/article/455a995088a8cca1662778ac.html)  
+[golang连接mysql](http://jingyan.baidu.com/article/455a995088a8cca1662778ac.html)
  
  
 
