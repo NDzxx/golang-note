@@ -45,6 +45,6 @@ https://github.com/go-ini/ini)
   
 [golang连接mysql](http://jingyan.baidu.com/article/455a995088a8cca1662778ac.html)
  
-[golang编程百例]（https://www.zybuluo.com/Gestapo/note/32082）
+[golang编程百例](https://www.zybuluo.com/Gestapo/note/32082)
 
 [liteIDE下载](http://www.golangtc.com/download/liteide)
