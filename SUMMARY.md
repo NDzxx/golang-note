@@ -29,4 +29,5 @@
 * [md5加密解密](md5加密解密.md)
 * [aes](aes.md)
 * [Gin框架使用](gin框架使用.md)
+* [beego xxs xsrf 的预防](beego-xxs-xsrf-的预防.md)
 
