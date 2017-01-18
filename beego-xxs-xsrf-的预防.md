@@ -6,3 +6,9 @@ func (this *HomeController) Get(){
     this.Data["xsrf_token"] = this.XsrfToken()
 }
 ```
+放在你的 head 中
+```
+<head>
+    <meta name="_xsrf" content="{{.xsrf_token}}" />
+</head>
+```
