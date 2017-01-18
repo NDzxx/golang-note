@@ -43,5 +43,4 @@ $.extend({
 参考beego文档
 
 ##XXS预防
-go语言提供
- text/template包下面的HTMLEscapeString、JSEscapeString等函数
+go语言提供text/template包下面的HTMLEscapeString、JSEscapeString等函数
