@@ -31,8 +31,8 @@ func (self *DbWebAdmin) InsertDefaultAdmin(name string, passwd string, bindip st
 
 //读的加读锁
 func (self *DbWebAdmin) LoadAllUserInfo() {
-	self.Lock.Lock()
-	defer self.Lock.Unlock()
+	self.Lock.RLock()
+	defer self.Lock.RUnlock()
 	dbObj := orm.NewOrm()
 	dbObj.Using(common.ALIAS_WEBADMIN)
 	...
